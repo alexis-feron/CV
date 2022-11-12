@@ -9,19 +9,23 @@ body{
 	font-size: 16px;
 	margin: 0;
 	background: #9DC6EC;
-	color: #000;
+	color: #494E5F;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	min-height: 100vh;
 }
 
 .tilt-box-wrap{
 	height: 80vh;
 	position: relative;
 	transition: all 0.6s ease-out;
-	perspective: 1000px
+	perspective: 1000px;
+	width: 57vh;
+	margin: auto;
+	min-height: 300px;
+	min-width: 212px;
 }
+
 .tilt-box-wrap:hover{
 	transition: all 0.3s linear;
 	transform: scale(1.1);
@@ -57,12 +61,65 @@ body{
 .t_over:nth-child(7){ left: 0; top: 66.666%; }
 .t_over:nth-child(8){ left: 33.333%; top: 66.666%; }
 .t_over:nth-child(9){ left: 66.666%; top: 66.666%; }
-.t_over:nth-child(1):hover ~ .tilt-box{transform:rotateX(-20deg) rotateY(20deg);}
+.t_over:nth-child(1):hover ~ .tilt-box{transform: rotateX(-20deg) rotateY(20deg);}
 .t_over:nth-child(2):hover ~ .tilt-box{transform: rotateX(-20deg) rotateY(0deg)}
 .t_over:nth-child(3):hover ~ .tilt-box{transform: rotateX(-20deg) rotateY(-20deg)}
 .t_over:nth-child(4):hover ~ .tilt-box{transform: rotateX(0deg) rotateY(20deg)}
 .t_over:nth-child(5):hover ~ .tilt-box{transform: rotateX(0deg) rotateY(0deg)}
 .t_over:nth-child(6):hover ~ .tilt-box{transform: rotateX(0deg) rotateY(-20deg)}
-.t_over:nth-child(7):hover ~ .tilt-box{transform:rotateX(20deg) rotateY(20deg);}
+.t_over:nth-child(7):hover ~ .tilt-box{transform: rotateX(20deg) rotateY(20deg);}
 .t_over:nth-child(8):hover ~ .tilt-box{transform: rotateX(20deg) rotateY(0deg)}
 .t_over:nth-child(9):hover ~ .tilt-box{transform: rotateX(20deg) rotateY(-20deg)}
+
+.content
+{
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+	align-items: flex-start;
+}
+.left
+{
+	all: inherit;
+	position: sticky;
+	top: 0;
+	border-radius: 20px;
+	width: 50%;
+	padding: 10vh;
+	min-width: 500px;
+	flex: 1;
+}
+.right
+{
+	position: relative;
+	display: block;
+	flex: 1;
+	border-radius: 20px;
+	width: 50%;
+	margin: 30px;
+	min-width: 350px;
+}
+
+button{
+	border: 5px solid #494E5F;
+	border-radius: 5px ;
+	color: #9DC6EC;
+	background-color: #494E5F;
+	position: right;
+	font-style: bold;
+}
+
+h2{
+	text-align: justify;
+}
+
+h4{
+	text-align: justify;
+}
+
+@media screen and (max-width: 927px) {
+	.left
+	{
+		position: relative;
+	}
+}

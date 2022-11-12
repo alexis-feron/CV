@@ -7,21 +7,63 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="tilt-box-wrap">
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <div class="tilt-box">
-                <img src="cv.png" height="100%" width="100%">
+    <div class="content">
+        <div class="left">
+            <div class="tilt-box-wrap">
+                <span class="t_over"></span>
+                <span class="t_over"></span>
+                <span class="t_over"></span>
+                <span class="t_over"></span>
+                <span class="t_over"></span>
+                <span class="t_over"></span>
+                <span class="t_over"></span>
+                <span class="t_over"></span>
+                <span class="t_over"></span>
+                <div class="tilt-box">
+                    <img id="cv" src="cv.png" height="100%" width="100%">
+                </div>
             </div>
         </div>
+        <div class="right">
+            <button id="button" onclick="changeLang()">Change language to english</button>
+            <div class="text" id="en" style="display:none;">
+                <h2>
+                    Hi👋, I'm Alexis Feron
+                </h2>
+                <h4>
+                    Student in the University Bachelor of Technology in Computer Science of Clermont-Ferrand, France.<br><br>
+                    I am looking for an internship in web development (if possible frontend) of 10 weeks during the period from April 11 to Friday June 16, 2023.
+                </h4>
+            </div>
+            <div class="text" id="fr" style="display:block;">
+                <h2>
+                    Salut👋, je suis Alexis Feron
+                </h2>
+                <h4>
+                    Étudiant en Bachelor Universitaire de Technologique en Informatique à l'Université de Clermont-Ferrand, France.<br><br>
+                    Je suis à la recherche d’un stage en développement web (si possible frontend) de 10 semaines durant la période du 11 avril au vendredi 16 juin 2023.
+                </h4>
+            </div> 
+        </div> 
     </div>
+    <script>
+        function changeLang() {
+            var divEn=document.getElementById("en");
+            var divFr=document.getElementById("fr");
+            var button=document.getElementById("button");
+            var cv=document.getElementById("cv");
+            if (divEn.style.display==="none") {
+                divEn.style.display="block";
+                divFr.style.display="none";
+                button.textContent="Changer la langue en français";
+                cv.src="cven.png";
+            } else {
+                divEn.style.display="none";
+                divFr.style.display="block";
+                button.textContent="Change language to english";
+                cv.src="cv.png";
+            }
+        }
+    </script>
 </body>
 </html>
